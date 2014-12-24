@@ -70,8 +70,8 @@ body {
   width: 100%;
   height: 100%; /* For at least Firefox */
   min-height: 100%;
-  -webkit-box-shadow: inset 0 0 100px rgba(0,0,0,.5);
-          box-shadow: inset 0 0 100px rgba(0,0,0,.5);
+  -webkit-box-shadow: inset 0 0 100px rgba(0,0,0,.50);
+          box-shadow: inset 0 0 100px rgba(0,0,0,.50);
 }
 .site-wrapper-inner {
   display: table-cell;
@@ -239,11 +239,20 @@ body {
     margin-top: 20px;
 }
 
+h4{
+    font-size: 28px;
+}
+h5{
+     font-size: 22px;
+}
+
 .details {
     margin-top: -5px;
     text-align: left;
     margin-left: -25px;
-    
+font-family: 'Open Sans Condensed', sans-serif;
+    font-weight: 300;
+    font-size: 18px;
 }
 
 .detailIMG {
@@ -1483,4 +1492,8 @@ xpush
         text-align: left;
         padding-left: 0px;
     color: #f1c40f;
+}
+
+li {
+    margin-top: 5px;
 }

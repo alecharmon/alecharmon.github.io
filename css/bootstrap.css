@@ -1107,10 +1107,10 @@ p {
 }
 .lead {
       margin-top: 30px;
-
+font-family: 'Open Sans Condensed', sans-serif;
     text-align: left;
   margin-bottom: 20px;
-  font-size: 16px;
+  font-size: 30px;
   font-weight: 300;
   line-height: 1.4;
 }
@@ -3772,7 +3772,7 @@ select[multiple].input-group-sm > .input-group-btn > .btn {
   float: none;
 }
 .nav-stacked > li + li {
-  margin-top: 2px;
+  margin-top: 6px;
   margin-left: 0;
 }
 .nav-justified {
