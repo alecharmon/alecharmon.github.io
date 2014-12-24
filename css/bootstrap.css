@@ -12,6 +12,7 @@ html {
 }
 body {
   margin: 0;
+    min-width: 600px;
 }
 article,
 aside,
