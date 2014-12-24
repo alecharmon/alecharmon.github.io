@@ -1,116 +1,177 @@
+
 <!DOCTYPE html>
-<html lang="en" class="demo-2 no-js">
-	<head>
-		<meta charset="UTF-8" />
-		<meta http-equiv="X-UA-Compatible" content="IE=edge"> 
-		<meta name="viewport" content="width=device-width, initial-scale=1"> 
-		<title>Alec Harmon Blumenfeld </title>
-		<meta name="description" content="Hover Effects with animated SVG Shapes using Snap.svg" />
-		<meta name="keywords" content="animated svg, hover effect, grid, svg shape html, " />
-		<meta name="author" content="Codrops" />
-		<link rel="shortcut icon" href="../favicon.ico">
-		<link rel="stylesheet" type="text/css" href="css/normalize.css" />
-		<link rel="stylesheet" type="text/css" href="css/demo.css" />
-		<link rel="stylesheet" type="text/css" href="css/component.css" />
-		<script src="js/snap.svg-min.js"></script>
-		<!--[if IE]>
-  		<script src="http://html5shiv.googlecode.com/svn/trunk/html5.js"></script>
-		<![endif]-->
-	</head>
-	<body>
-		<div class="container" >
-			<div align="center">
-				<img class="profile"  src="img/alec.jpg" />
-			</div>
-			<!-- Top Navigation -->
-			<div class="container">
-			</div >
-			<header class="codrops-header">
-				<h1>Alec Harmon Blumenfeld<span> </span></h1>
-				<nav class="codrops-demos">
-					<a href="index.html" id="active"><b>Contact</b></a>
-					
-					<a href="index2.html">Projects</a>
-				</nav>
-			</header>
-			<section id="grid" class="grid clearfix" >
-				
-				<a href="#" data-path-hover="m 0,0 0,47.7775 c 24.580441,3.12569 55.897012,-8.199417 90,-8.199417 34.10299,0 65.41956,11.325107 90,8.199417 L 180,0 z">
-					<figure>
-						<img height="452px" width="240"  src="img/twitter.png" />
-						<svg viewBox="0 0 180 320" preserveAspectRatio="none"><path d="m 0,0 0,171.14385 c 24.580441,15.47138 55.897012,24.75772 90,24.75772 34.10299,0 65.41956,-9.28634 90,-24.75772 L 180,0 0,0 z"/></svg>
-						<figcaption>
-							<h2>Twitter</h2>
-							<p>140 characters for spurts of brilliance</p>
-							<button onclick="window.location='https://twitter.com/harmon_alec';"  >View</button>
-						</figcaption>
-					</figure>
-				</a>
-				<a  data-path-hover="m 0,0 0,47.7775 c 24.580441,3.12569 55.897012,-8.199417 90,-8.199417 34.10299,0 65.41956,11.325107 90,8.199417 L 180,0 z">
-					<figure>
-						
-						<img height="452px" width="240"  src="img/hands.png" />
-						<svg viewBox="0 0 180 320" preserveAspectRatio="none"><path d="m 0,0 0,171.14385 c 24.580441,15.47138 55.897012,24.75772 90,24.75772 34.10299,0 65.41956,-9.28634 90,-24.75772 L 180,0 0,0 z"/></svg>
-						<figcaption>
-							<h2>Linked In</h2>
-							<p>Like Facebook But everyone is wearing suits.</p>
-							<button onclick="window.location='https://linkedin.com/pub/alec-harmon-blumenfeld';">View</button>
-						</figcaption>
-					</figure>
-				</a>
-				<a  data-path-hover="m 0,0 0,47.7775 c 24.580441,3.12569 55.897012,-8.199417 90,-8.199417 34.10299,0 65.41956,11.325107 90,8.199417 L 180,0 z">
-					<figure>
-						<img height="452px" width="240"  src="img/mcgill.png" />
-						<svg viewBox="0 0 180 320" preserveAspectRatio="none"><path d="m 0,0 0,171.14385 c 24.580441,15.47138 55.897012,24.75772 90,24.75772 34.10299,0 65.41956,-9.28634 90,-24.75772 L 180,0 0,0 z"/></svg>
-						<figcaption>
-							<h2>Email</h2>
-							<p>McGill U. Email</p>
-							<button onclick="window.open('mailto:alec.blumenfeld@mail.mcgill.ca');">Send Email</button>
-						</figcaption>
-					</figure>
-				</a>
-				<a href="#" data-path-hover="m 0,0 0,47.7775 c 24.580441,3.12569 55.897012,-8.199417 90,-8.199417 34.10299,0 65.41956,11.325107 90,8.199417 L 180,0 z">
-					<figure>
-						<img height="452px" width="240"  src="img/resume.png" />
-						<svg viewBox="0 0 180 320" preserveAspectRatio="none"><path d="m 0,0 0,171.14385 c 24.580441,15.47138 55.897012,24.75772 90,24.75772 34.10299,0 65.41956,-9.28634 90,-24.75772 L 180,0 0,0 z"/></svg>
-						<figcaption>
-							<h2>CV</h2>
-							<p></p>
-							<button onclick="window.location='https://drive.google.com/file/d/0BxQXkLAZmtKpbWE2a05nSTFrUkU/view?usp=sharing';">View</button>
-						</figcaption>
-					</figure>
-				</a>
-				
-			</section>
-			
-		</div><!-- /container -->
-		<script>
-			(function() {
-	
-				function init() {
-					var speed = 330,
-						easing = mina.backout;
+<html lang="en">
+  <head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta name="description" content="">
+    <meta name="author" content="">
+    <title>Cover Template for Bootstrap</title>
 
-					[].slice.call ( document.querySelectorAll( '#grid > a' ) ).forEach( function( el ) {
-						var s = Snap( el.querySelector( 'svg' ) ), path = s.select( 'path' ),
-							pathConfig = {
-								from : path.attr( 'd' ),
-								to : el.getAttribute( 'data-path-hover' )
-							};
+    <!-- Bootstrap core CSS -->          <link href="css/style.css" rel="stylesheet">
 
-						el.addEventListener( 'mouseenter', function() {
-							path.animate( { 'path' : pathConfig.to }, speed, easing );
-						} );
+    <link href="css/bootstrap.css" rel="stylesheet">
 
-						el.addEventListener( 'mouseleave', function() {
-							path.animate( { 'path' : pathConfig.from }, speed, easing );
-						} );
-					} );
-				}
+    <!-- Custom styles for this template -->
+    <link href="css/cover.css" rel="stylesheet">
 
-				init();
+          <script src="js/modernizr.js"></script>
 
-			})();
-		</script>
-	</body>
+    <!-- Just for debugging purposes. Don't actually copy these 2 lines! -->
+    <!--[if lt IE 9]><script src="../../assets/js/ie8-responsive-file-warning.js"></script><![endif]-->
+   
+    <!-- HTML5 shim and Respond.js for IE8 support of HTML5 elements and media queries -->
+    <!--[if lt IE 9]>
+      <script src="https://oss.maxcdn.com/html5shiv/3.7.2/html5shiv.min.js"></script>
+      <script src="https://oss.maxcdn.com/respond/1.4.2/respond.min.js"></script>
+    <![endif]-->
+  </head>
+
+  <body>
+
+    <div class="site-wrapper">
+
+      <div class="site-wrapper-inner">
+           <div class="cover-container" style="background-color:transparent; margin-bottom: -60px;">
+          <div class="title"> Alec Blumenfeld</div>
+          </div>
+      	<div class="cover-container"   style="background-color: transparent; margin-bottom: -20px;">
+            
+      		<div id="fade" ></div>
+      	</div>
+        <div class="cover-container" style="margin-bottom:80px;" >
+
+         
+        	
+          <div class="inner-heading">
+              
+            <h1 class="heading">Phildaelphia & montréal</h1>
+              
+            </div>
+          <div class="inner cover">
+               <h3 class="seperator">Education</h3>
+               <div class="row listIt" >
+              <div class="col-md-8 col-xs-8" >
+                    <p class="lead">Studying Software engineering and History At mcgill University, Graduating Class of 2017.  </p>
+                  </div>
+                  
+             
+                
+              <div class="col-md-4 col-xs-4 detailIMG" style="margin-top: 20px;"><img src="img/martlet.png" align="left" style="width:100px; height:100px;"></div>
+              </div>
+          
+              <h3 class="seperator">Experince</h3>
+              <div class="row listIt" >
+              <div class="col-md-8 col-xs-8" >
+                  <h4 style="float: left; margin-bottom:0px;" class="list-item-heading">Webtype  </h4>
+                  <br>
+                  
+                  <h5 style=" color:grey;  " class="list-item-heading"><i>Software engineer</i></h5>
+                  <dir class="details">
+                  <li>Conducted typographical due diligence on matters such as typefaces for programing languages, coop- erate type styles, and kanji typefaces.</li>
+               <li>Worked on software projects for developing website generation frameworks</li>
+                      <li>Learned and applied design prinicples to software projects.
+</li>
+                  </dir>
+                  </div>
+                  
+             
+                
+              <div class="col-md-4 col-xs-4 detailIMG"><img src="img/svg/server.svg" align="left" ></div>
+              </div>
+              <div class="row listIt">
+              <div class="col-md-8 col-xs-8" >
+                  <h4 style="float: left; margin-bottom:0px;" class="list-item-heading">Wharton Small Buisiness Devlopment  </h4>
+                  <br>
+                  
+                  <h5 style=" color:grey;  " class="list-item-heading"><i>consultant </i></h5>
+                  
+                  <dir class="details">
+                  <li>Conducted typographical due diligence on matters such as typefaces for programing languages, coop- erate type styles, and kanji typefaces.</li>
+               <li>Worked on software projects for developing website generation frameworks</li>
+                      <li>Learned and applied design prinicples to software projects.
+</li>
+                  </dir>
+                  </div>
+                  
+             
+                
+              <div class="col-md-4 col-xs-4 detailIMG"><img src="img/svg/tie.svg" align="left" ></div>
+              </div>
+            
+            
+            
+            
+             
+              
+              <h3 class="seperator">Technical Ablities & Other</h3>
+         
+               
+	<section class="cd-intro">
+		
+        <h1 class="cd-headline rotate-1 row">
+            <div class="col-md-6 col-xs-6 Static"> <span>I  Write</span></div>
+            <div class="col-md-6 col-xs-6 Dyn">
+			<span class="cd-words-wrapper ">
+				<b class="is-visible">Java</b>
+                <b>Python</b>
+				<b>JavaScript</b>
+				<b>C/C++</b>
+			</span>
+            </div>
+		</h1>
+        <h1 class="cd-headline rotate-1 row">
+            <div class="col-md-6 col-xs-6 Static"> <span>I  USE</span></div>
+            <div class="col-md-6 col-xs-6 Dyn">
+			<span class="cd-words-wrapper ">
+				<b class="is-visible">Intelli J</b>
+                <b>Sketch</b>
+				<b>Illustrator</b>
+				<b>Laytex</b>
+                <b>Angular JS</b>
+			</span>
+            </div>
+		</h1>
+        <h1 class="cd-headline rotate-1 row">
+            <div class="col-md-6 col-xs-6 Static"> <span>I  MAke</span></div>
+            <div class="col-md-6 col-xs-6 Dyn">
+			<span class="cd-words-wrapper ">
+				<b class="is-visible">Web Apps	</b>
+                <b>Android Apps</b>
+				<b>Websites</b>
+				<b>BAckends </b>
+			</span>
+            </div>
+		</h1>
+	</section>
+              
+              
+              <script language="JavaScript">
+var name = "alecblumenfeld";
+var domain = "gmail.com";
+document.write('<a class="btn btn-lg btn-default" href=\"mailto:' + name + '@' + domain + '\">');
+document.write('Email Me! </a>');
+</script>
+          </div>
+
+      
+
+        </div>
+
+      </div>
+
+    </div>
+
+
+    <!-- Bootstrap core JavaScript
+    ================================================== -->
+    <!-- Placed at the end of the document so the pages load faster -->
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.1/jquery.min.js"></script>
+    <script src="js/bootstrap.min.js"></script>
+    <script src="js/main.js"></script>
+
+    <!-- IE10 viewport hack for Surface/desktop Windows 8 bug -->
+    
+  </body>
 </html>
