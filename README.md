@@ -1,120 +1,129 @@
-> March, 2016: If you're on an old version of Jekyll Now and run into a) build warnings or b) syntax highlighting issues caused by [Jekyll 3 and GitHub Pages updates](https://github.com/blog/2100-github-pages-now-faster-and-simpler-with-jekyll-3-0), just :sparkles:[update your _config.yml](https://github.com/barryclark/jekyll-now/pull/445/files):sparkles: and you'll be set!
+# Forma Jekyll Theme v1.1.0
 
-# Jekyll Now
+[Theme Live Demo](https://forma.netlify.com/)
 
-**Jekyll** is a static site generator that's perfect for GitHub hosted blogs ([Jekyll Repository](https://github.com/jekyll/jekyll))
+## Features
 
-**Jekyll Now** makes it easier to create your Jekyll blog, by eliminating a lot of the up front setup.
+* Featured posts slider
+* Masonry grid layout
+* Contact form built-in 
+* Mobile-ready
+* Social icons built-in
+* Social sharing built-in
+* Mailchimp subscription form
+* Code Syntax Highlight with [Prism.js](https://prismjs.com/)
+* Support for Disqus comments
 
-- You don't need to touch the command line
-- You don't need to install/configure ruby, rvm/rbenv, ruby gems :relaxed:
-- You don't need to install runtime dependencies like markdown processors, Pygments, etc
-- If you're on Windows, this will make setting up Jekyll a lot easier
-- It's easy to try out, you can just delete your forked repository if you don't like it
+## Getting Started
 
-In a few minutes you'll be set up with a minimal, responsive blog like the one below giving you more time to spend on writing epic blog posts!
+**Table of Contents**
 
-![Jekyll Now Theme Screenshot](/images/jekyll-now-theme-screenshot.jpg "Jekyll Now Theme Screenshot")
+* 1. Theme Configuration
+* 2. Author configuration
+* 3. Social Links
+* 4. Site Navigation
+* 5. Images
+* 6. Local Installation
+* 7. Deployment
+* 8. Support
 
-## Quick Start
+### 1. Theme Configuration
 
-### Step 1) Fork Jekyll Now to your User Repository
+The theme configuration options can be found within the **_config.yml** file. More information about Jekyll configuration can be found in the Jekyll documentation.
 
-Fork this repo, then rename the repository to yourgithubusername.github.io.
+* name - the title of your blog, shown in the page and description areas.
+* description - the description of your site for tagline, social meta tag, search engines, and feed.xml.
+* site_description - the description of your site that will be used in the sidebar section. 
+* logo - the image for site logo.
+* favicon - the icon for your site.
+* baseurl - the subpath of your site, e.g. /blog, for generating urls. If baseurl is set, you will need to prepend the baseurl to these settings: author image, site navigation, post images.
+* production_url - the base hostname and protocol of your site for where absolute urls are needed.
+* disqus - your Disqus shortname. Enter the Disqus shortname here if you wish to have Disqus comments enabled, leave blank to disable comments.
+* mailchimp_url - your form action URL for MailChimp newsletter signup form.
+* ga_analytics - Google analytics tracking ID.
 
-Your Jekyll blog will often be viewable immediately at <https://yourgithubusername.github.io> (if it's not, you can often force it to build by completing step 2)
 
-![Step 1](/images/step1.gif "Step 1")
+### 2. Author configuration
 
-### Step 2) Customize and view your site
+To set up single or multiple authors got to **_data directory** *(Forma/_data/authors.yml)* and edit exmaple information. Afte that you need to add your created author for example author: daniel to the front matter of your post.
 
-Enter your site name, description, avatar and many other options by editing the _config.yml file. You can easily turn on Google Analytics tracking, Disqus commenting and social icons here too.
 
-Making a change to _config.yml (or any file in your repository) will force GitHub Pages to rebuild your site with jekyll. Your rebuilt site will be viewable a few seconds later at <https://yourgithubusername.github.io> - if not, give it ten minutes as GitHub suggests and it'll appear soon
+### 3. Social Links
 
-> There are 3 different ways that you can make changes to your blog's files:
+To enable social links on your blog simply enter your social profile username, for example, twitter: "justgoodthemes" . If a field is left blank, the social icon will not be shown.
 
-> 1. Edit files within your new username.github.io repository in the browser at GitHub.com (shown below).
-> 2. Use a third party GitHub content editor, like [Prose by Development Seed](http://prose.io). It's optimized for use with Jekyll making markdown editing, writing drafts, and uploading images really easy.
-> 3. Clone down your repository and make updates locally, then push them to your GitHub repository.
+### 4. Site Navigation
 
-![_config.yml](/images/config.png "_config.yml")
+The site navigation can be found in the **_config.yml** file. To add a page to the site navigation simply add your new page in the markdown format (e.g. newpage.md) in the theme root folder. Next edit your navigation menu located in **_config.yml** file on line 26. To add a new item to the navigation you have to add the item name and url. For example:
 
-### Step 3) Publish your first blog post
+~~~~
+navigation:
+- text: New Page
+url: /newpage/
+~~~~
 
-Edit `/_posts/2014-3-3-Hello-World.md` to publish your first blog post. This [Markdown Cheatsheet](http://www.jekyllnow.com/Markdown-Style-Guide/) might come in handy.
+### 5. Images
 
-![First Post](/images/first-post.png "First Post")
+Images for pages are located in the forma/assets/images folder and images for posts are located in the forma/assets/images/posts directory.
 
-> You can add additional posts in the browser on GitHub.com too! Just hit the + icon in `/_posts/` to create new content. Just make sure to include the [front-matter](http://jekyllrb.com/docs/frontmatter/) block at the top of each new blog post and make sure the post's filename is in this format: year-month-day-title.md
+#### Image With Caption
 
-## Local Development
+Within your blog posts you can include captions for images. This requires using some HTML markup.
 
-1. Install Jekyll and plug-ins in one fell swoop. `gem install github-pages` This mirrors the plug-ins used by GitHub Pages on your local machine including Jekyll, Sass, etc.
-2. Clone down your fork `git clone https://github.com/yourusername/yourusername.github.io.git`
-3. Serve the site and watch for markup/sass changes `jekyll serve`
-4. View your website at http://127.0.0.1:4000/
-5. Commit any changes and push everything to the master branch of your GitHub user repository. GitHub Pages will then rebuild and serve your website.
+The example below illustrates how to include an image with a caption in a blog post:
 
-## Moar!
+~~~~
+{% include image-caption.html imageurl="/images/posts/Apple-Watch-In-Car.jpg" 
+title="Apple Super" caption="supertest" %}
+~~~~
 
-I've created a more detailed walkthrough, [**Build A Blog With Jekyll And GitHub Pages**](http://www.smashingmagazine.com/2014/08/01/build-blog-jekyll-github-pages/) over at the Smashing Magazine website. Check it out if you'd like a more detailed walkthrough and some background on Jekyll. :metal:
+Add the following code into your post/page markdown and change its attributes accordingly.
 
-It covers:
+#### Full Width Image With Caption
 
-- A more detailed walkthrough of setting up your Jekyll blog
-- Common issues that you might encounter while using Jekyll
-- Importing from Wordpress, using your own domain name, and blogging in your favorite editor
-- Theming in Jekyll, with Liquid templating examples
-- A quick look at Jekyll 2.0’s new features, including Sass/Coffeescript support and Collections
+To have wide images in posts or pages simply add #wide word with the hashtag at the end of image path like in the example below:
 
-## Jekyll Now Features
+~~~~
+{% include image-caption.html imageurl="/images/posts/Apple-Watch-In-Car.jpg#wide" 
+title="Apple" caption="This is caption" %}
+~~~~
 
-✓ Command-line free _fork-first workflow_, using GitHub.com to create, customize and post to your blog  
-✓ Fully responsive and mobile optimized base theme (**[Theme Demo](http://jekyllnow.com)**)  
-✓ Sass/Coffeescript support using Jekyll 2.0  
-✓ Free hosting on your GitHub Pages user site  
-✓ Markdown blogging  
-✓ Syntax highlighting  
-✓ Disqus commenting  
-✓ Google Analytics integration  
-✓ SVG social icons for your footer  
-✓ 3 http requests, including your avatar  
+Add the following code into your post/page markdown and change its attributes accordingly.
 
-✘ No installing dependencies
-✘ No need to set up local development  
-✘ No configuring plugins  
-✘ No need to spend time on theming  
-✘ More time to code other things ... wait ✓!  
+#### Image alignment
 
-## Questions?
+To align images left or right you have to use #left and #right words with the hashtag at the end of the image path. Please, check the example below:
 
-[Open an Issue](https://github.com/barryclark/jekyll-now/issues/new) and let's chat!
+~~~~
+![My helpful screenshot]("/assets/screenshot.jpg#left")
+~~~~
 
-## Other forkable themes
+### 6. Local Instalation
 
-You can use the [Quick Start](https://github.com/barryclark/jekyll-now#quick-start) workflow with other themes that are set up to be forked too! Here are some of my favorites:
+To set up Jekyll on local machine please follow the official documentation that can be found here -> https://jekyllrb.com/docs/.
 
-- [Hyde](https://github.com/poole/hyde) by MDO
-- [Lanyon](https://github.com/poole/lanyon) by MDO
-- [mojombo.github.io](https://github.com/mojombo/mojombo.github.io) by Tom Preston-Werner
-- [Left](https://github.com/holman/left) by Zach Holman
-- [Minimal Mistakes](https://github.com/mmistakes/minimal-mistakes) by Michael Rose
-- [Skinny Bones](https://github.com/mmistakes/skinny-bones-jekyll) by Michael Rose
+### 7. Deployment
 
-## Credits
+Sites built using Jekyll can be deployed in a large number of ways due to the static nature of the generated output. Here are some of the most common ways:
 
-- [Jekyll](https://github.com/jekyll/jekyll) - Thanks to its creators, contributors and maintainers.
-- [SVG icons](https://github.com/neilorangepeel/Free-Social-Icons) - Thanks, Neil Orange Peel. They're beautiful.
-- [Solarized Light Pygments](https://gist.github.com/edwardhotchkiss/2005058) - Thanks, Edward.
-- [Joel Glovier](http://joelglovier.com/writing/) - Great Jekyll articles. I used Joel's feed.xml in this repository.
-- [David Furnes](https://github.com/dfurnes), [Jon Uy](https://github.com/jonuy), [Luke Patton](https://github.com/lkpttn) - Thanks for the design/code reviews.
-- [Bart Kiers](https://github.com/bkiers), [Florian Simon](https://github.com/vermluh), [Henry Stanley](https://github.com/henryaj), [Hun Jae Lee](https://github.com/hunjaelee), [Javier Cejudo](https://github.com/javiercejudo), [Peter Etelej](https://github.com/etelej), [Ben Abbott](https://github.com/jaminscript), [Ray Nicholus](https://github.com/rnicholus), [Erin Grand](https://github.com/eringrand), [Léo Colombaro](https://github.com/LeoColomb), [Dean Attali](https://github.com/daattali), [Clayton Errington](https://github.com/cjerrington), [Colton Fitzgerald](https://github.com/coltonfitzgerald), [Trace Mayer](https://github.com/sunnankar) - Thanks for your [fantastic contributions](https://github.com/barryclark/jekyll-now/commits/master) to the project!
+#### Manual Deployment
 
-## Contributing
+Jekyll generates your static site to the **_site** directory by default. You can transfer the contents of this directory to almost any hosting provider to get your site live. Here are some manual ways of achieving this:
 
-Issues and Pull Requests are greatly appreciated. If you've never contributed to an open source project before I'm more than happy to walk you through how to create a pull request.
+##### Netlify
 
-You can start by [opening an issue](https://github.com/barryclark/jekyll-now/issues/new) describing the problem that you're looking to resolve and we'll go from there.
+This theme is prepared to be hosted on [Netlify](https://www.netlify.com/). All you need to do is create a new private repository on GitHub or GitLab. Upload the theme to the repository and link your repo to Netlify. Please check [this link](https://www.netlify.com/blog/2015/10/28/a-step-by-step-guide-jekyll-3.0-on-netlify/#step-2-link-to-your-github) with the step by step guidelines.
 
-I want to keep Jekyll Now as minimal as possible. Every line of code should be one that's useful to 90% of the people using it. Please bear that in mind when submitting feature requests. If it's not something that most people will use, it probably won't get merged. :guardsman:
+##### FTP
+
+Most traditional web hosting providers let you upload files to their servers over FTP. To upload a Jekyll site to a web host using FTP, run the jekyll build command and copy the contents of the generated **_site** folder to the root folder of your hosting account. This is most likely to be the httpdocs or public_html folder on most hosting providers.
+
+##### Amazon S3
+
+If you want to host your site on Amazon S3, you can do so by using the [s3_website application](https://github.com/laurilehmijoki/s3_website). It will push your site to Amazon S3 where it can be served like any web server, dynamically scaling to almost unlimited traffic.
+
+### 8. Support
+
+The documentation included provides all the information you need to get started with the theme. However, if you have any questions you can email us at hello@justgoodthemes.com, and we will be happy to help you.
+
+*Also, if you have any bug reports, or feature requests, please let us know!*

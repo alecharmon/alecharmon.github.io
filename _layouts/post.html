@@ -1,17 +1,133 @@
 ---
 layout: default
+disqus: false
+post_class: post-template
 ---
 
-<article class="post">
-  <h1>{{ page.title }}</h1>
-
-  <div class="entry">
-    {{ content }}
-  </div>
-
-  <div class="date">
-    Written on {{ page.date | date: "%B %e, %Y" }}
-  </div>
-
-  {% include disqus.html %}
-</article>
+<div id="content" class="site-content">
+    <main id="main" class="site-main inner">
+        <article class="post">
+            {% if page.featured_image %}
+                <div class="post-thumbnail"><img src="{{ site.baseurl }}{{ page.featured_image }}" alt="{{ page.title }}"></div>
+            {% endif %}
+            <header class="entry-header">
+                <h1 class="entry-title">{{ page.title }}</h1>
+                <div class="entry-meta">
+                    {% for author in site.data.authors %}
+                    {% if author[1].username == page.author %}
+                    <span class="post-author"><a href="{{ site.baseurl }}/author/{{ page.author }}/">{{ author[1].name }}</a></span>
+                    {% endif %}
+                    {% endfor %}
+                    <span class="post-date">
+                        <time class="published" datetime="{{ page.date | date: "%Y-%m-%d" }}">{{ page.date | date: "%B %-d,
+                            %Y" }}</time>
+                    </span>
+                </div><!-- .entry-meta -->
+            </header><!-- .entry-header -->
+            <div class="entry-content">
+                {{content}}
+            </div>
+            <footer class="entry-footer">
+                {% if page.tags.size > 0 %}
+                <p class="post-tags">
+                    {% for tag in page.tags %} {% if forloop.index == page.tags.size %}
+                    <a href='{{ site.baseurl }}tag/{{ tag | downcase | replace: ' ', '- ' }}/'>{{ tag | camelcase }}</a>
+                    {% else %}
+                    <a href='{{ site.baseurl }}tag/{{ tag | downcase | replace: ' ', '- ' }}/'>{{ tag | camelcase }}</a>
+                    {% endif %}
+                    {% endfor %}
+                </p>
+                {% endif %}
+                <div class="share-links">
+                    <span class="meta-before">Share:</span>
+                    <a target="_blank" href="https://twitter.com/share?text={{ page.title | url_encode }}&amp;url={{ site.production_url }}{{ page.url | remove_first: '/' }}"><i class="fa-twitter" aria-hidden="true"></i><span class="screen-reader-text">Twitter</span></a>
+                    <a target="_blank" href="https://www.facebook.com/sharer/sharer.php?u={{ site.production_url }}{{ page.url | remove_first: '/' }}"><i class="fa-facebook" aria-hidden="true"></i><span class="screen-reader-text">Facebook</span></a>
+                </div><!-- .share-post -->
+            </footer>
+            {% for author in site.data.authors %}
+            {% if author[1].username == page.author %}
+            <div class="author-box">
+                <div class="author-info">
+                    {% if author[1].picture %}
+                    <div class="avatar-container">
+                        <img class="author-profile-image" src="{{ site.baseurl }}{{ author[1].picture }}" alt="{{ page.author }}"
+                            class="avatar" />
+                    </div>
+                    {% endif %}
+                    <div class="author-details">
+                        <h2 class="author-title">About <a href="{{ site.baseurl }}author/{{ page.author }}">{{ author[1].name }}</a></h2>
+                        {% if author[1].bio %}
+                        <p class="author-description">{{ author[1].bio }}</p>
+                        {% else %}
+                        <p class="author-description">Read <a href="{{ site.baseurl }}author/{{ page.author }}">more posts</a> by this
+                            author.</p>
+                        {% endif %}
+                        <div class="author-links">
+                            {% if author[1].url %}
+                            <a href="{{ author[1].url_full }}" target="_blank" rel="noopener">
+                                <i class="fa-globe" aria-hidden="true"></i>
+                                <span class="screen-reader-text">Website</span>
+                            </a>
+                            {% endif %}
+                            {% if author[1].facebook %}
+                            <a href="https://facebook.com/{{ author[1].facebook }}" target="_blank" rel="noopener">
+                                <i class="fa-facebook" aria-hidden="true"></i>
+                                <span class="screen-reader-text">Facebook</span>
+                            </a>
+                            {% endif %}
+                            {% if author[1].twitter %}
+                            <a href="https://twitter.com/{{ author[1].twitter }}" target="_blank" rel="noopener">
+                                <i class="fa-twitter" aria-hidden="true"></i>
+                                <span class="screen-reader-text">Twitter</span>
+                            </a>
+                            {% endif %}
+                        </div>
+                    </div>
+                </div><!-- .author-info -->
+            </div><!-- .author-box -->
+            {% endif %}
+            {% endfor %}
+        </article>
+        {% if site.mailchimp_url %}
+            {% include newsletter-box.html %}
+        {% endif %}
+        <nav class="navigation post-navigation">
+            <h2 class="screen-reader-text">Post navigation</h2>
+            <div class="nav-links">
+            {% if page.previous.url %}
+            <div class="nav-previous">
+                <a href="{{ site.baseurl }}{{page.previous.url}}" class="nav-inside">
+                    <span class="nav-before">Previous post</span>
+                    <span class="nav-title">{{page.previous.title}}</span>
+                    <span class="nav-meta">{{page.previous.date
+                    | date: "%B %-d, %Y"}}</span>
+                    {% if page.previous.featured_image_thumbnail %}
+                        <span class="nav-thumb" style="background-image: url({{ page.previous.featured_image_thumbnail }})"></span>
+                    {% elsif page.previous.featured_image %}
+                        <span class="nav-thumb" style="background-image: url({{ page.previous.featured_image }})"></span>
+                    {% else %}
+                    {% endif %}
+                </a>
+            </div>
+            {% endif %}
+            {% if page.next.url %}
+            <div class="nav-next">
+                <a href="{{ site.baseurl }}{{page.next.url}}" class="nav-inside">
+                    <span class="nav-before">Next post</span>
+                    <span class="nav-title">{{page.next.title}}</span>
+                    <span class="nav-meta">{{page.next.date
+                                    | date: "%B %-d, %Y"}}</span>
+                    {% if page.next.featured_image_thumbnail %}
+                        <span class="nav-thumb" style="background-image: url({{ page.next.featured_image_thumbnail }})"></span>
+                    {% elsif page.next.featured_image %}
+                        <span class="nav-thumb" style="background-image: url({{ page.next.featured_image }})"></span>
+                    {% else %}
+                    {% endif %}
+                </a>
+            </div>
+            {% endif %}
+            </div><!-- .nav-links -->
+        </nav><!-- .post-navigation -->
+        {% include disqus.html %}
+    </main><!-- .site-main -->
+</div><!-- .site-content -->

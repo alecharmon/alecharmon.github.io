@@ -1,0 +1,739 @@
+/**
+ * 2. General
+ * ----------------------------------------------------------------------------
+ */
+html,
+button,
+input,
+select,
+textarea {
+    font-family: $font-primary;
+}
+
+body {
+    background-color: #fff;
+    color: $gray-dark;
+    line-height: 1.75;
+    overflow-x: hidden;
+}
+
+a {
+    border-bottom: 1px solid $color-accent;
+    color: $gray-dark;
+    text-decoration: none;
+    -webkit-transition: border .3s, color .3s;
+    -moz-transition: border .3s, color .3s;
+    transition: border .3s, color .3s;
+
+    &:hover {
+        border-color: $gray-dark;
+    }
+}
+
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+    color: $black;
+    font-weight: bold;
+    line-height: 1.2;
+}
+
+h1 {
+    font-size: 30px;
+    margin: 1em 0 0.6em;
+}
+
+h2 {
+    font-size: 24px;
+    margin: 1.25em 0 0.75em;
+}
+
+h3 {
+    font-size: 20px;
+    margin: 1.5em 0 0.9em;
+}
+
+h4 {
+    font-size: 18px;
+    margin: 1.66667em 0 1em;
+}
+
+h5,
+h6 {
+    font-size: 16px;
+    margin: 1.875em 0 1.125em;
+}
+
+.entry-content > h1:first-child,
+.entry-content > h2:first-child,
+.entry-content > h3:first-child,
+.entry-content > h4:first-child,
+.entry-content > h5:first-child,
+.entry-content > h6:first-child {
+    margin-top: 0;
+}
+
+p {
+    margin: 0 0 1.5em;
+}
+
+address {
+    font-style: italic;
+    margin: 0 0 1.5em;
+}
+
+mark,
+ins {
+    background-color: $yellow;
+    color: $black;
+    padding: 0 3px;
+    text-decoration: none;
+}
+
+pre {
+    background-color: $gray-light;
+    color: $black;
+    font-size: 14px;
+    line-height: 1.5;
+    margin: 0 0 1.5em;
+    padding: 1.5em;
+    white-space: pre;
+    white-space: pre-wrap;
+    word-wrap: break-word;
+}
+
+blockquote {
+    border: 2px solid $gray-dark;
+    color: $black;
+    font-size: 24px;
+    font-weight: bold;
+    line-height: 1.33333;
+    margin: 1.25em 15px 1.875em 0;
+    padding: 1.875em 30px 1.25em 45px;
+    position: relative;
+    text-align: center;
+
+    &:before {
+        background-color: $color-accent;
+        border-bottom: 2px solid $color-accent;
+        border-right: 2px solid $color-accent;
+        content: "";
+        height: 100%;
+        left: 15px;
+        position: absolute;
+        top: 15px;
+        width: 100%;
+        z-index: -1;
+    }
+
+    p {
+        margin-bottom: 0.5em;
+    }
+}
+
+blockquote > :last-child {
+    margin-bottom: 0;
+}
+
+blockquote a {
+    border-color: transparent;
+    color: $black;
+}
+
+blockquote small,
+blockquote cite {
+    display: block;
+    font-style: normal;
+    font: 14px / 1.5 $font-secondary;
+    margin-top: 1em;
+}
+
+dl,
+dd {
+    margin: 0 0 1.5em;
+}
+
+dt {
+    font-weight: bold;
+}
+
+ul,
+ol {
+    margin: 0 0 1.5em;
+    padding: 0 0 0 30px;
+}
+
+ul {
+    list-style: disc;
+}
+
+ol {
+    list-style: decimal;
+}
+
+li > ul,
+li > ol {
+    margin-bottom: 0;
+}
+
+table {
+    border-bottom: 1px solid $gray-light;
+    line-height: 1.5;
+    margin: 0 0 1.5em;
+    text-align: left;
+    width: 100%;
+}
+
+caption {
+    color: $gray;
+    font: 12px / 1.5 $font-secondary;
+    margin-bottom: 1em;
+    text-align: center;
+}
+
+th,
+td {
+    border-top: 1px solid $gray-light;
+    padding: 0.5em 10px;
+}
+
+th {
+    color: $black;
+    font-weight: bold;
+}
+
+hr {
+    background-color: $gray-light;
+    border: 0;
+    height: 1px;
+    margin: 1.875em 0;
+    position: relative;
+}
+
+.center {
+    text-align: center;
+}
+
+/* Form fields */
+
+label {
+    color: $black;
+    display: block;
+    font-size: 14px;
+    font-weight: bold;
+}
+
+button,
+input,
+select,
+textarea {
+    -webkit-box-sizing: border-box;
+    -moz-box-sizing: border-box;
+    box-sizing: border-box;
+    border: 2px solid $gray-dark;
+    border-radius: 0;
+    color: $gray-dark;
+    display: inline-block;
+    font-size: 16px;
+    font-weight: normal;
+    max-width: 100%;
+    padding: 0.5em 10px;
+    vertical-align: baseline;
+}
+
+input[type="text"]:focus,
+input[type="email"]:focus,
+input[type="url"]:focus,
+input[type="password"]:focus,
+input[type="search"]:focus,
+textarea:focus {
+    outline: 0;
+}
+
+button,
+input[type="submit"],
+input[type="button"],
+input[type="reset"] {
+    background-color: $color-accent;
+    border: 0;
+    color: $black;
+    font-size: 14px;
+    font-weight: bold;
+    height: 40px;
+    letter-spacing: 0.1em;
+    padding: 5px 30px;
+    text-transform: uppercase;
+    -webkit-transition: .3s;
+    -moz-transition: .3s;
+    transition: .3s;
+}
+
+button:hover,
+button:focus,
+button:active,
+input[type="submit"]:hover,
+input[type="submit"]:focus,
+input[type="submit"]:active,
+input[type="button"]:hover,
+input[type="button"]:focus,
+input[type="button"]:active,
+input[type="reset"]:hover,
+input[type="reset"]:focus,
+input[type="reset"]:active {
+    background-color: $black;
+    color: $color-accent;
+    outline: 0;
+}
+
+.widget label {
+    color: $gray;
+    font-weight: normal;
+}
+
+.widget input[type="text"],
+.widget input[type="email"],
+.widget input[type="url"],
+.widget input[type="password"],
+.widget input[type="search"],
+.widget select,
+.widget textarea,
+.search-form .search-field {
+    border: 0;
+    padding: 10px;
+    width: 100%;
+}
+
+.widget button,
+.widget input[type="submit"],
+.widget input[type="button"],
+.widget input[type="reset"],
+.search-form .search-submit {
+    border: 2px solid $color-accent;
+    font-size: 12px;
+    padding: 5px 15px;
+}
+
+.gh-subscribe-form {
+    padding-right: 140px;
+    position: relative;
+}
+
+.search-form {
+    padding-right: 110px;
+    position: relative;
+}
+
+.subscribe-email,
+.search-field {
+    border: 0;
+    display: block;
+    height: 40px;
+    margin-bottom: 1em;
+    width: 100%;
+}
+
+#mc-embedded-subscribe {
+    border: 2px solid $color-accent;
+    padding: 0;
+    position: absolute;
+    right: 0;
+    top: 0;
+    width: 130px;
+}
+
+.search-submit {
+    padding: 0;
+    position: absolute;
+    right: 0;
+    top: 0;
+    width: 100px;
+}
+
+/* Placeholder text color */
+::-webkit-input-placeholder {
+    color: $gray;
+}
+
+:-moz-placeholder {
+    color: $gray;
+}
+
+::-moz-placeholder {
+    color: $gray;
+    opacity: 1;
+}
+
+:-ms-input-placeholder {
+    color: $gray;
+}
+
+/* Text selection */
+::-moz-selection {
+    background: $yellow;
+    color: $black;
+    text-shadow: none;
+}
+
+::selection {
+    background: $yellow;
+    color: $black;
+    text-shadow: none;
+}
+
+/* Videos, audios and embeds */
+embed,
+iframe,
+object,
+video {
+    max-width: 100%;
+}
+
+.entry-content .fluid-width-video-wrapper,
+.kg-embed-card {
+    margin: 0 0 1.5em;
+}
+
+.kg-embed-card > .fluid-width-video-wrapper {
+    margin: 0;
+}
+
+/* Images */
+img {
+    height: auto;
+    max-width: 100%;
+}
+
+/* Captions */
+.caption {
+    margin-bottom: 1.5em;
+
+    p {
+        margin-bottom: 0;
+    }
+}
+
+.caption-text,
+.kg-image-card figcaption,
+.kg-embed-card figcaption {
+    color: $gray;
+    font: 12px / 1.5 $font-secondary;
+    margin: 0 auto 1em;
+    max-width: 740px;
+    padding-top: 1em;
+    text-align: center;
+}
+
+/* Alignments */
+.alignleft {
+    float: left;
+    margin: 0.375em 30px 0.75em 0;
+    max-width: 50%;
+}
+
+.alignright {
+    float: right;
+    margin: 0.375em 0 0.75em 30px;
+    max-width: 50%;
+}
+
+.full-width {
+    clear: both;
+    display: block;
+    margin: 0 auto 1.5em;
+}
+
+blockquote.alignleft,
+blockquote.alignright {
+    float: none;
+    margin: 1.25em 15px 1.875em 0;
+    max-width: none;
+}
+
+/* Intro text */
+.intro {
+    border-bottom: 1px solid $gray-light;
+    color: $black;
+    font-size: 1.25em;
+    line-height: 1.5;
+    margin-bottom: 1.2em;
+    padding-bottom: 1.2em;
+}
+
+/* Footnotes */
+.footnotes-list {
+    color: $gray;
+    font: 14px / 1.5 $font-secondary;
+}
+
+.footnote-item p {
+    margin-bottom: 5px;
+}
+
+/* CSS icons */
+.icon-plus {
+    height: 24px;
+    position: absolute;
+    left: 50%;
+    margin-left: -12px;
+    margin-top: -12px;
+    top: 50%;
+    width: 24px;
+}
+
+.icon-plus:before,
+.icon-plus:after {
+    background-color: $black;
+    content: "";
+    left: 50%;
+    position: absolute;
+    top: 50%;
+}
+
+.icon-plus:before {
+    height: 2px;
+    margin-left: -6px;
+    margin-top: -1px;
+    width: 12px;
+}
+
+.icon-plus:after {
+    height: 12px;
+    margin-left: -1px;
+    margin-top: -6px;
+    width: 2px;
+}
+
+/* Text meant only for screen readers */
+.screen-reader-text,
+.custom-logo + .site-title,
+.custom-logo + .site-title + .site-description {
+    clip: rect(1px, 1px, 1px, 1px);
+    height: 1px;
+    overflow: hidden;
+    position: absolute !important;
+    width: 1px;
+    word-wrap: normal !important;
+}
+
+/* Grid */
+.post-wrapper,
+.footer-columns {
+    margin-left: -30px;
+}
+
+.post-wrapper .post,
+.footer-widgets .widget-area {
+    -webkit-box-sizing: border-box;
+    -moz-box-sizing: border-box;
+    box-sizing: border-box;
+    float: left;
+    padding-left: 30px;
+}
+
+.footer-widgets .widget-area:nth-child(1):nth-last-child(1) {
+    width: 100%;
+}
+
+.post-wrapper .post,
+.footer-widgets .widget-area:nth-child(1):nth-last-child(2),
+.footer-widgets .widget-area:nth-child(2):nth-last-child(1) {
+    width: 50%;
+}
+
+.footer-widgets .widget-area:nth-child(1):nth-last-child(3),
+.footer-widgets .widget-area:nth-child(2):nth-last-child(2),
+.footer-widgets .widget-area:nth-child(3):nth-last-child(1) {
+    width: 33.333%;
+}
+
+/* Clearing floats */
+.inner:after,
+.post-wrapper:after,
+.post-inside:after,
+.entry-content:after,
+.nav-links:after,
+.footer-columns:after,
+.widget-instagram:after {
+    clear: both;
+}
+
+.inner:before,
+.inner:after,
+.post-wrapper:before,
+.post-wrapper:after,
+.post-inside:before,
+.post-inside:after,
+.entry-content:before,
+.entry-content:after,
+.nav-links:before,
+.nav-links:after,
+.footer-columns:before,
+.footer-columns:after,
+.widget-instagram:before,
+.widget-instagram:after {
+    content: "";
+    display: table;
+}
+
+/* Slick Carousel */
+.slick-slider {
+    position: relative;
+    display: block;
+    box-sizing: border-box;
+    -webkit-user-select: none;
+    -moz-user-select: none;
+    -ms-user-select: none;
+    user-select: none;
+    -webkit-touch-callout: none;
+    -khtml-user-select: none;
+    -ms-touch-action: pan-y;
+    touch-action: pan-y;
+    -webkit-tap-highlight-color: transparent;
+}
+
+.slick-list {
+    position: relative;
+    display: block;
+    overflow: hidden;
+    margin: 0;
+    padding: 0;
+
+    :focus {
+        outline: none;
+    }
+}
+
+.slick-list.dragging {
+    cursor: pointer;
+    cursor: hand;
+}
+
+.slick-slider .slick-track, .slick-slider .slick-list {
+    -webkit-transform: translate3d(0, 0, 0);
+    -moz-transform: translate3d(0, 0, 0);
+    -ms-transform: translate3d(0, 0, 0);
+    -o-transform: translate3d(0, 0, 0);
+    transform: translate3d(0, 0, 0);
+}
+
+.slick-track {
+    position: relative;
+    top: 0;
+    left: 0;
+    display: block;
+}
+
+.slick-track:before, .slick-track:after {
+    display: table;
+    content: '';
+}
+
+.slick-track:after {
+    clear: both;
+}
+
+.slick-loading .slick-track {
+    visibility: hidden;
+}
+
+.slick-slide {
+    display: none;
+    float: left;
+    height: 100%;
+    min-height: 1px;
+}
+
+[dir='rtl'] .slick-slide {
+    float: right;
+}
+
+.slick-slide img {
+    display: block;
+}
+
+.slick-slide.slick-loading img {
+    display: none;
+}
+
+.slick-slide.dragging img {
+    pointer-events: none;
+}
+
+.slick-initialized .slick-slide {
+    display: block;
+}
+
+.slick-loading .slick-slide {
+    visibility: hidden;
+}
+
+.slick-vertical .slick-slide {
+    display: block;
+    height: auto;
+    border: 1px solid transparent;
+}
+
+.slick-arrow.slick-hidden {
+    display: none;
+}
+
+.slick-slider .slick-arrow {
+    background-color: #fff;
+    border: 2px solid $gray-dark;
+    bottom: 15px;
+    color: $black;
+    font-size: 21px;
+    letter-spacing: normal;
+    line-height: 2.4;
+    height: 50px;
+    padding: 0;
+    position: absolute;
+    width: 56px;
+    z-index: 1;
+}
+
+.slick-next {
+    right: 15px;
+}
+
+.slick-prev {
+    right: 69px;
+}
+
+/* Contact Form */
+
+.form-label {
+    display: block;
+    font-size: 1rem;
+    margin-bottom: 0.625em;
+    span {
+        color: $gray;
+        font: 14px/1.5 $font-secondary;
+    }
+}
+
+.form-item {
+    margin-bottom: 1rem;
+}
+
+.form-textarea {
+    min-height: 230px;
+}
+
+.contact-form {
+    box-sizing: border-box;
+    margin-bottom: 3.33333em;
+}
+
+.contact-form input[type=email], .contact-form input[type=text], .contact-form input[type=url] {
+    width: 100%;
+}
+
+.contact-form textarea {
+    height: 200px;
+    width: 100%;
+    float: none;
+}

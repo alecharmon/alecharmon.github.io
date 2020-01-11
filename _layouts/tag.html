@@ -1,0 +1,19 @@
+---
+layout: default
+current: tag
+title: Tag Page
+class: 'tag-template'
+---
+
+<div id="content" class="site-content">
+    <main id="main" class="site-main inner">
+        <header class="page-header">
+            <h1 class="page-title">
+                {{ paginator.total_posts }} {% if paginator.total_posts == 1 %}post{% else %}posts{% endif %} tagged <span class="highlight">{{ page.tag }}</span>
+            </h1>
+        </header>
+        <div id="post-wrapper" class="post-wrapper">
+            {% for post in paginator.posts %}{% include postbox.html %}{% endfor %}
+        </div><!-- .post-wrapper -->
+    </main><!-- .site-main -->
+</div><!-- .site-content -->

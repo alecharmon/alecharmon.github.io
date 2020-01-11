@@ -1,18 +1,26 @@
 ---
 layout: default
+title: Home
 ---
 
-<div class="posts">
-  {% for post in site.posts %}
-    <article class="post">
-
-      <h1><a href="{{ site.baseurl }}{{ post.url }}">{{ post.title }}</a></h1>
-
-      <div class="entry">
-        {{ post.excerpt }}
-      </div>
-
-      <a href="{{ site.baseurl }}{{ post.url }}" class="read-more">Read More</a>
-    </article>
-  {% endfor %}
+<div id="content" class="site-content">
+    <!-- Slider -->
+    {% if page.url == "/" %}
+        {% include featuredbox.html %}
+    {% endif %}
+    <!-- Posts Index -->
+    <main id="main" class="site-main inner">
+        <div id="post-wrapper" class="post-wrapper">
+            {% for post in paginator.posts %}
+                {% include postbox.html %}
+            {% endfor %}
+        </div><!-- .post-wrapper -->
+        <!-- Pagination-->
+        {% include pagination.html %}
+    </main>
 </div>
+
+
+
+
+

@@ -2,11 +2,18 @@
 layout: default
 ---
 
-<article class="page">
-
-  <h1>{{ page.title }}</h1>
-
-  <div class="entry">
-    {{ content }}
-  </div>
-</article>
+<div id="content" class="site-content">
+    <main id="main" class="site-main inner">
+        <article class="post page">
+            {% if page.featured_image %}
+            <div class="post-thumbnail"><img src="{{ site.baseurl }}{{ page.featured_image }}" alt="{% if page.featured_image_alt %}{{ page.featured_image_alt }}{% else %}{{ page.title }}{% endif %}" /></div>
+            {% endif %}
+            <header class="entry-header">
+                <h1 class="entry-title">{{ page.title }}</h1>
+            </header><!-- .entry-header -->
+            <div class="entry-content">
+                {{content}}
+            </div>
+        </article><!-- .post .page -->
+    </main><!-- .site-main -->
+</div><!-- .site-content -->

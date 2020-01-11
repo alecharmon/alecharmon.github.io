@@ -1,0 +1,102 @@
+/**
+ * 4. Site Header
+ * ----------------------------------------------------------------------------
+ */
+.site-header {
+    text-align: center;
+}
+
+.site-branding {
+    padding: 3.75em 0 5em;
+}
+
+.custom-logo {
+    margin-bottom: 0;
+
+    a {
+        border: 0;
+    }
+}
+
+.custom-logo img {
+    max-height: 100px;
+}
+
+.site-title {
+    font-size: 24px;
+    font-weight: bold;
+    letter-spacing: 0.05em;
+    line-height: 1;
+    margin: 0 8px 0 0;
+    position: relative;
+    text-transform: uppercase;
+    z-index: 1;
+
+    a {
+        border: 2px solid $gray-dark;
+        color: $black;
+        display: inline-block;
+        padding: 18px 30px 10px 38px;
+        position: relative;
+        -webkit-transition: padding .3s;
+        -moz-transition: padding .3s;
+        transition: padding .3s;
+
+        &:before {
+            background-color: $color-accent;
+            border-bottom: 2px solid $color-accent;
+            border-right: 2px solid $color-accent;
+            content: "";
+            height: 100%;
+            left: 8px;
+            position: absolute;
+            top: 8px;
+            -webkit-transition: .3s;
+            -moz-transition: .3s;
+            transition: .3s;
+            width: 100%;
+            z-index: -1;
+        }
+
+        &:hover {
+            padding: 14px 34px;
+        }
+    }
+}
+
+.site-title a:hover:before {
+    left: 0;
+    top: 0;
+}
+
+.site-description {
+    color: $gray;
+    font: 12px / 1.5 $font-secondary;
+    margin-bottom: 0;
+    margin-top: 20px;
+}
+
+.toggle-sidebar,
+.toggle-search {
+    font-size: 14px;
+    height: 40px;
+    padding: 0;
+    width: 40px;
+}
+
+#show-sidebar,
+#show-search {
+    background-color: #fff;
+    color: $black;
+    position: fixed;
+    right: 0;
+    z-index: 997;
+}
+
+#show-sidebar {
+    top: 0;
+}
+
+#show-search {
+    top: 41px;
+}

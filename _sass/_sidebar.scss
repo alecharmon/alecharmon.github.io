@@ -1,0 +1,72 @@
+/**
+ * 5. Sidebar
+ * ----------------------------------------------------------------------------
+ */
+.sidebar {
+    background-color: $black;
+    bottom: 0;
+    overflow-y: auto;
+    position: fixed;
+    right: -540px;
+    top: 0;
+    -webkit-transition: right .3s ease-in-out;
+    -moz-transition: right .3s ease-in-out;
+    transition: right .3s ease-in-out;
+    width: 540px;
+    z-index: 999;
+}
+
+.site-header,
+.site-content,
+.site-footer {
+    -webkit-transition: opacity .3s ease-in-out;
+    -moz-transition: opacity .3s ease-in-out;
+    transition: opacity .3s ease-in-out;
+}
+
+.site-overlay {
+    background-color: transparent;
+    cursor: e-resize;
+    display: none;
+    height: 100%;
+    left: 0;
+    position: fixed;
+    top: 0;
+    width: 100%;
+    z-index: 998;
+}
+
+.sidebar--opened {
+    overflow: hidden;
+}
+
+.sidebar--opened .sidebar {
+    right: 0;
+}
+
+.sidebar--opened .site-header,
+.sidebar--opened .site-content,
+.sidebar--opened .site-footer {
+    opacity: .3;
+}
+
+.sidebar--opened .site-overlay {
+    display: block;
+}
+
+#hide-sidebar {
+    background-color: $color-accent;
+    color: $black;
+    position: absolute;
+    right: 0;
+    top: 0;
+}
+
+#hide-sidebar .icon-plus {
+    -webkit-transform: rotate(45deg);
+    transform: rotate(45deg);
+}
+
+.sidebar-inside {
+    padding: 60px;
+}

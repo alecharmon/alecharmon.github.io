@@ -1,0 +1,40 @@
+
+<aside class="featured-posts" aria-label="Featured">
+    <div class="slider-loading">
+        <div id="featured-slider" class="featured-slider">
+            {% for post in site.posts %}
+            {% if post.featured %}
+            <div>
+                <div class="slide-inner">
+                    {% if post.featured_image %}
+                        <div class="slide-bg" style="background-image: url({{ post.featured_image }})"></div>
+                    {% endif %}
+                    <div class="slide-overlay">
+                        <h2 class="entry-title">
+                            <a href="{{ site.baseurl }}{{ post.url | remove_first: '/' }}" rel="bookmark">{{ post.title }}</a>
+                        </h2>
+                        <div class="entry-meta">
+                            {% for author in site.data.authors %}
+                            {% if author[1].username == post.author %}
+                            <span class="post-author"><a href="{{ site.baseurl }}author/{{ post.author }}/">{{ author[1].name }}</a></span>
+                            {% endif %}
+                            {% endfor %}
+                            <span class="post-date">
+                            <time class="published" datetime="{{ post.date | date: '%Y-%m-%d' }}">{{ post.date | date: "%B %-d, %Y" }}</time></span>
+                        </div><!-- .entry-meta -->
+                        <div class="slider-nav">
+                                <button type="button" class="featured-prev"><i class="fa-arrow-left-custom" aria-hidden="true"></i> <span class="screen-reader-text">Previous</span></button>
+                                <button type="button" class="featured-next"><i class="fa-arrow-right-custom" aria-hidden="true"></i> <span class="screen-reader-text">Next</span></button>
+                            </div>
+                    </div><!-- .slide-overlay -->
+                </div><!-- .slider-inner -->
+            </div>
+            {% endif %}
+            {% endfor %}
+        </div><!-- .featured-slider -->
+    </div><!-- .slider-loading -->
+</aside><!-- .post -->
+
+
+
+

@@ -1,0 +1,17 @@
+<header class="site-header">
+    <div class="inner">
+        <div class="site-branding">
+            {% if site.logo != null %}
+                <p class="custom-logo"><a href="{{ site.baseurl }}/.." rel="home"><img src="{{ site.baseurl }}/{{ site.logo }}" alt="{{ site.name }}" /></a></p>
+                <h1 class="site-title screen-reader-text"><a href="{{ site.baseurl }}/" rel="home">{{site.title}}</a></h1>
+            {% else %}
+                <h1 class="site-title"><a href="{{ site.baseurl }}/" rel="home">{{site.name}}</a></h1>
+                <p class="site-description">{% if page.description %}{{ page.description }}{% else %}{{ site.description }}{% endif %}</p>
+            {% endif %}
+        </div><!-- .site-branding -->
+        <button id="show-sidebar" class="toggle-sidebar">
+            <span class="screen-reader-text">Discover More</span>
+            <span aria-hidden="true" class="icon-plus"></span>
+        </button>
+    </div><!-- .inner -->
+</header><!-- .site-header -->
