@@ -7,10 +7,11 @@ description: >-
 date: '2018-10-28T18:32:38.192Z'
 categories: []
 keywords: []
+featured_image: images/php-array-internals/hero.gif#wide
+author: alec
 # slug: /internals-of-php-5-7-arrays
 ---
 
-![_config.yml]({{ site.baseurl }}/images/php-array-internals/hero.gif)
 
 In the documentation for PHP 7 there is a small note that Internal array pointers are not implemented in PHP 7’s `foreach`. As someone who has built iterable classes in PHP before this sent me on a puzzling adventure on how the internal of \`foreach\` works in a broad sense but also the implications of what this means for compatibility between PHP 5 and PHP 7.
 

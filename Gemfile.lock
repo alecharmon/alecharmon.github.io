@@ -64,7 +64,6 @@ PLATFORMS
   ruby
 
 DEPENDENCIES
-  jekyll (= 3.8.5)
   jekyll-author-page
   jekyll-paginate
   jekyll-seo-tag
@@ -73,4 +72,4 @@ DEPENDENCIES
   tzinfo-data
 
 BUNDLED WITH
-   1.16.4
+   1.16.6

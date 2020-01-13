@@ -1,13 +1,13 @@
 # Site setings
-name: 'Forma'
-description: 'Bold Theme For Brave People'
+name: 'Alec Harmon'
+description: 'My Thoughts and musings'
 # Sidebar about text
-site_description: 'Welcome to my blog. It features topics such as fashion, architecture, travel & design. This blog is about finding balance in life, living with purpose, having fun, and doing what you love.'
+site_description: 'Welcome to my blog where I write about software'
 logo:
 favicon: 'assets/images/favicon.ico'
 baseurl: 
-production_url: https://forma.netlify.com/
-disqus: 'justgoodthemes'
+production_url: https://alecharmon.com/
+disqus: 
 mailchimp_url: '//justgoodthemes.us3.list-manage.com/subscribe/post?u=78f1bab16028354caeb23aecd&amp;id=4a7330d117'
 # Add your GA Tracking Id
 ga_analytics: 
@@ -18,15 +18,15 @@ contact_page_description: "Forma theme comes with a contact form built-in. You c
 thankyou_page_description: "Your message has been successfully sent. We will contact you very soon!"
 
 # Social links
-twitter: 'username'
-facebook: 'username'
-github: 'username'
-codepen: 'username'
-dribbble: 'username'
-medium: '@username'
-instagram: 'username'
-pinterest: 'username'
-linkedin: 'username'
+twitter: 'harmon_alec'
+# facebook: 'username'
+github: 'alecharmon'
+# codepen: 'username'
+# dribbble: 'username'
+# medium: '@username'
+# instagram: 'username'
+# pinterest: 'username'
+linkedin: 'alecharmon'
 
 # Navigation
 navigation:
