@@ -49,7 +49,16 @@
 }
 
 .post-thumbnail {
+    width: 100%;
     margin-bottom: 1.875em;
+}
+
+img.post-thumbnail {
+    width: 100%;
+}
+
+.post-thumbnail img {
+    width: 100%;
 }
 
 a.post-thumbnail {

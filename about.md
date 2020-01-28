@@ -4,9 +4,9 @@ title: About
 featured_image: /assets/images/pages/about.jpg
 ---
 
-Daniel Bennett is a senior developer from Vilnius, Lithuania. After graduating from The College with a degree in **Computer Science**, he worked for three small web shops where he honed his development skills and love for JavaScript.
+Alec Harmon is a software engineer working in Brooklyn, New York for a company called [Mailchimp](mailchimp.com), *they do email marketing*. He also cooks and reads but that is arguably less marketable.
 
-His work has been recognized by Communication Arts, IBM, How, ID, IdN, AIGA, Effie, Archive, Graphis, AdFed and Rockport. **Net** magazine named him a person to watch in 2018.
+He went to McGill university and graduated in 2017 with a degree in Software Engineering and History. Consequently write them if he says something historically or technically incorrect please write them.
 
 >The world always seems brighter when you’ve just made something that wasn’t there before. <cite>Neil Gaiman</cite>
 

@@ -1,18 +1,7 @@
-daniel:
-  username: daniel
-  name: Daniel Bennett
-  url_full: https://justgoodthemes.com/
-  url: justgoodthemes.com
-  bio: Daniel is a designer, photographer, speaker, author of a couple of books about typography and the founder of photo magazine Curious.
-  picture: /assets/images/daniel.jpg
-  facebook: justgoodthemes
-  twitter: justgoodthemes
-nancy:
-  username: nancy
-  name: Nancy Perez
-  url_full: https://justgoodthemes.com/
-  url: justgoodthemes.com
-  bio: Nancy is a reporter at Wild Bird magazine, where she writes about technology / design companies and the people they impact.
-  picture: /assets/images/nancy.jpg
-  facebook: False
-  twitter: justgoodthemes
+alec:
+  username: alec
+  name: Alec Harmon
+  # url_full: https://alecharmon.com/
+  # url: alecharmon.com
+  bio: Alec is a software engineer who works on boring projects but finds ways to make them less boring
+  picture: /assets/images/alec.png

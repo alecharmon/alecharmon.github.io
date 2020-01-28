@@ -101,9 +101,9 @@ post_class: post-template
                     <span class="nav-title">{{page.previous.title}}</span>
                     <span class="nav-meta">{{page.previous.date
                     | date: "%B %-d, %Y"}}</span>
-                    {% if page.previous.featured_image_thumbnail %}
+                    {% if false and page.previous.featured_image_thumbnail %}
                         <span class="nav-thumb" style="background-image: url({{ page.previous.featured_image_thumbnail }})"></span>
-                    {% elsif page.previous.featured_image %}
+                    {% elsif false and page.previous.featured_image %}
                         <span class="nav-thumb" style="background-image: url({{ page.previous.featured_image }})"></span>
                     {% else %}
                     {% endif %}
@@ -117,9 +117,9 @@ post_class: post-template
                     <span class="nav-title">{{page.next.title}}</span>
                     <span class="nav-meta">{{page.next.date
                                     | date: "%B %-d, %Y"}}</span>
-                    {% if page.next.featured_image_thumbnail %}
+                    {% if false and page.next.featured_image_thumbnail %}
                         <span class="nav-thumb" style="background-image: url({{ page.next.featured_image_thumbnail }})"></span>
-                    {% elsif page.next.featured_image %}
+                    {% elsif false and page.next.featured_image %}
                         <span class="nav-thumb" style="background-image: url({{ page.next.featured_image }})"></span>
                     {% else %}
                     {% endif %}
