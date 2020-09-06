@@ -34,8 +34,8 @@ navigation:
     url: /about/
   # - text: Style Guide
   #   url: /style-guide/
-  - text: Contact Me
-    url: /contact/
+  # - text: Contact Me
+  #   url: /contact/
 
 # Required Plugins
 plugins_dir:
