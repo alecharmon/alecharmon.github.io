@@ -1,5 +1,6 @@
 
 <aside class="featured-posts" aria-label="Featured">
+    {% if false %}
     <div class="slider-loading">
         <div id="featured-slider" class="featured-slider">
             {% for post in site.posts %}
@@ -33,6 +34,7 @@
             {% endfor %}
         </div><!-- .featured-slider -->
     </div><!-- .slider-loading -->
+    {% endif %}
 </aside><!-- .post -->
 
 
